@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="d:/my html/work1/first-work.css">
+  <title>WO就是WO</title>
+  <script type="text/javascript" src="jquery.1.10.2.js"></script>
+  <script type="text/javascript">
+
+      $(function () {
+          var container = $('#container');
+          var list = $('#list');
+          var buttons = $('#buttons span');
+          var prev = $('#prev');
+          var next = $('#next');
+          var index = 1;
+          var len = 5;
+          var interval = 5500;
+          var timer;
+
+
+          function animate (offset) {
+              var left = parseInt(list.css('left')) + offset;
+              if (offset>0) {
+                  offset = '+=' + offset;
+              }
+              else {
+                  offset = '-=' + Math.abs(offset);
+              }
+              list.animate({'left': offset}, 300, function () {
+                  if(left > -200){
+                      list.css('left', -1100 * len);
+                  }
+                  if(left < (-1100 * len)) {
+                      list.css('left', -1100);
+                  }
+              });
+          }
+
+          function showButton() {
+              buttons.eq(index-1).addClass('on').siblings().removeClass('on');
+          }
+
+          function play() {
+              timer = setTimeout(function () {
+                  next.trigger('click');
+                  play();
+              }, interval);
+          }
+          function stop() {
+              clearTimeout(timer);
+          }
+
+          next.bind('click', function () {
+              if (list.is(':animated')) {
+                  return;
+              }
+              if (index == 5) {
+                  index = 1;
+              }
+              else {
+                  index += 1;
+              }
+              animate(-1100);
+              showButton();
+          });
+
+          prev.bind('click', function () {
+              if (list.is(':animated')) {
+                  return;
+              }
+              if (index == 1) {
+                  index = 5;
+              }
+              else {
+                  index -= 1;
+              }
+              animate(1100);
+              showButton();
+          });
+
+          buttons.each(function () {
+               $(this).bind('click', function () {
+                   if (list.is(':animated') || $(this).attr('class')=='on') {
+                       return;
+                   }
+                   var myIndex = parseInt($(this).attr('index'));
+                   var offset = -1100 * (myIndex - index);
+
+                   animate(offset);
+                   index = myIndex;
+                   showButton();
+               })
+          });
+
+          container.hover(stop, play);
+
+          play();
+
+      });
+  </script>
+
+</head>
+<body>
+<div class="main-container">
+  <center>
+  <marquee  id="srcoll" hspace="20" onmouseover="this.stop()" onmouseout="this.start()"><h2>大家好，给大家介绍一下，这是我的偶像ALLEN IVERSON.</h2></marquee>
+  </center>
+  <div id="container">
+      <div id="list" style="left: -1100px;">
+          <img src="al5.png" alt="4"/>
+          <img src="al1.png" alt="1"/>
+          <img src="al2.png" alt="1"/>
+          <img src="al3.png" alt="2"/>
+          <img src="al4.png" alt="3"/>
+          <img src="al5.png" alt="5"/>
+          <img src="al1.png" alt="5"/>
+      </div>
+      <div id="buttons">
+          <span index="1" class="on"></span>
+          <span index="2"></span>
+          <span index="3"></span>
+          <span index="4"></span>
+          <span index="5"></span>
+      </div>
+      <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+      <a href="javascript:;" id="next" class="arrow">&gt;</a>
+</div>
+
+    <div class="me margin-b">
+        <div class="right">
+          <h3>Hi！I'm czj, from China.</h3><br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi, odit quas, quidem voluptatibus voluptas, atque accusamus id <br><br>facere aperiam iure fugit? Eius, facere ullam amet sequi similique commodi aspernatur.
+          <br><br>
+          <button onclick="alert('恭喜你！你已经被bat录用，哈哈哈')"class="btn btn-default">Hire me!</button>
+        </div>
+    </div>
+
+    <div class="my-study margin-b">
+
+      <h1>My Studying Process</h1>
+      <h5>Hi! I'm czj, from China.</h5>
+
+      <div class="study-process">
+        <img class="img" src="pupil.png" alt="pupil">
+        <img class="img" src="chu.png" alt="junior">
+        <img class="img" src="senio.png" alt="senior">
+        <img class="img" src="college.png" alt="college">
+
+      </div>
+    </div>
+
+    <div class="latest margin-b">
+      <h1>My Latest Study</h1>
+      <div class="lesson">
+        <img class="img" src="\my html\work1\timg.jpg" alt="概率论">
+        <img class="img" src="\my html\work1\timg2.jpg" alt="大学物理">
+        <img class="img" src="\my html\work1\timg4.jpg" alt="复变函数">
+        <img class="img" src="\my html\work1\timg3.jpg" alt="科学发展理论">
+      </div>
+
+    </div>
+
+    <div class="hire margin-b">
+
+          <div class="main-message" >
+            <h4 class="messagehead" >Leave A Message</h4>
+            <div class="form-group" >
+              <label class="label" >Name*</label>
+              <input type="text"  value="eg ：江哥" class="form-control">
+              <label class="label" >Email*</label>
+              <input type="text"  value="eg : xxxxxxxxx@163.com" class="form-control">
+              <label class="label" >Message*</label>
+              <textarea name="name" rows="5" cols="44"></textarea>
+              <button  style="width:80%;margin-top:5%;" onclick="alert('恭喜江哥！你已经被bat录用，哈哈哈！')"class="btn btn-default">Hire me!</button>
+
+            </div>
+          </div>
+          <div class="other-message">
+            <div class="other">
+              <h2 class="messagehead">ADDRESS</h1>
+              <P class="scontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </P>
+            </div>
+            <div class="other1">
+              <h2 class="messagehead">PHONE</h1>
+              <P class="scontent">+880 174 8548 5648 <br>+880 165 8564 5964</P>
+            </div>
+            <div class="other">
+              <h2 class="messagehead">WEB</h1>
+              <P class="scontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </P>
+            </div>
+          </div>
+
+  </div>
+  <div class="footer">Copyright : All Stayed, All Rights Reserved.</div>
+</body>
+</html>

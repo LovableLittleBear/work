@@ -1,0 +1,95 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+.margin-b{
+	margin-bottom: 20px;
+}
+body {
+	display: flex;
+	background-color: #ddd;
+	flex-direction:row;
+	height: 100%;
+	font-family: Lato, sans-serif;
+	color: navy;
+	font-size: 0.9em;
+}
+.main-container{
+  width: 80%;
+  margin:0 auto;
+  display: block;
+}
+#srcoll{ color: green; font-weight: bold;  width: 60%;  height: 10%;  margin: 10px auto;}
+#container { width: 100%; height: 500px;   margin: 0,auto;  border: 3px solid #333; overflow: hidden; position: relative;}
+#list { width: 7700px; height: 500px; position: absolute; z-index: 1;}
+#list img { float: left;}
+#buttons { position: absolute; height: 10px; width: 100px; z-index: 2; bottom: 20px; left: 250px;}
+#buttons span { cursor: pointer; float: left; border: 1px solid #fff; width: 10px; height: 10px; border-radius: 50%; background: #333; margin-right: 5px;}
+#buttons .on {  background: orangered;}
+.arrow { cursor: pointer; display: none; line-height: 39px; text-align: center; font-size: 36px; font-weight: bold; width: 40px; height: 40px;  position: absolute; z-index: 2; top: 180px; background-color: RGBA(0,0,0,.3); color: #fff;}
+.arrow:hover { background-color: RGBA(0,0,0,.7);}
+#container:hover .arrow { display: block;}
+#prev { left: 20px;}
+#next { right: 20px;}
+
+.me{
+	margin-top: 20px;
+	display: flex;
+	justify-content: flex-end;
+  height:400px;
+  background-image: url(me2.png);
+}
+.right{
+	height: 255px;
+  width:60%;
+	align-self: center;
+}
+button{
+  background-color: red;
+  width: 300px;
+  box-shadow: 1px;
+  border:1px solid #eee;
+}
+.my-study,.latest{
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+.study-process,.lesson{
+	flex: 0 1 auto;
+}
+.img{
+	margin:15px;
+}
+.my-study{background-color: #eee;}
+.latest{
+	background-image: url(lesson.png);
+}
+
+.hire{
+	background-color: #654d4c;
+	height: 600px;
+}
+.hire{display: flex;	flex:column;	align-items: center;justify-content: center; margin-bottom: 0;}
+.main-message,.other-message{
+	width:33%;
+	height: 75%;
+  background-color: white;
+	text-align: center;
+	padding: 10px;
+}
+.other1,.other{background-color: red; height: 28%;}
+
+
+.main-message{margin-right: 15px;}
+.messagehead{margin-top: 5%;}
+.form-group{width: 100%;}
+.form-control{margin-bottom: 5%;}
+.label{float:left; color:green; font-weight: bold;}
+.scontent{text-align: left;}
+.footer{background-color: #222222; color:rgba(255,255,255,.3); height: 100px;text-align: center;line-height: 100px;}
