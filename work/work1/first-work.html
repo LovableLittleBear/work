@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="d:/my html/work1/first-work.css">
+  <link rel="stylesheet" href="first-work.css">
+  <link rel="stylesheet" media="(max-width:500px)" href="mobile.css">
   <title>WO就是WO</title>
   <script type="text/javascript" src="jquery.1.10.2.js"></script>
   <script type="text/javascript">
@@ -132,17 +133,19 @@
 </div>
 
     <div class="me margin-b">
+
         <div class="right">
-          <h3>Hi！I'm czj, from China.</h3><br>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi, odit quas, quidem voluptatibus voluptas, atque accusamus id <br><br>facere aperiam iure fugit? Eius, facere ullam amet sequi similique commodi aspernatur.
-          <br><br>
+          <h3 id="wo">Hi！I'm czj, from China.</h3><br>
+           <p id="jieshao">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi, odit quas, quidem voluptatibus voluptas, atque accusamus id <br><br>facere aperiam iure fugit? Eius, facere ullam amet sequi similique commodi aspernatur.
+            </p><br>
           <button onclick="alert('恭喜你！你已经被bat录用，哈哈哈')"class="btn btn-default">Hire me!</button>
         </div>
+
     </div>
 
     <div class="my-study margin-b">
 
-      <h1>My Studying Process</h1>
+      <h3>My Studying Process</h3>
       <h5>Hi! I'm czj, from China.</h5>
 
       <div class="study-process">
@@ -155,7 +158,7 @@
     </div>
 
     <div class="latest margin-b">
-      <h1>My Latest Study</h1>
+      <h3>My Latest Study</h3>
       <div class="lesson">
         <img class="img" src="\my html\work1\timg.jpg" alt="概率论">
         <img class="img" src="\my html\work1\timg2.jpg" alt="大学物理">
@@ -175,23 +178,23 @@
               <label class="label" >Email*</label>
               <input type="text"  value="eg : xxxxxxxxx@163.com" class="form-control">
               <label class="label" >Message*</label>
-              <textarea name="name" rows="5" cols="44"></textarea>
-              <button  style="width:80%;margin-top:5%;" onclick="alert('恭喜江哥！你已经被bat录用，哈哈哈！')"class="btn btn-default">Hire me!</button>
+              <textarea name="name" rows="5" cols="44" id="area"></textarea>
+              <button  id="lastbutton"  onclick="alert('恭喜江哥！你已经被bat录用，哈哈哈！')"class="btn btn-default">Hire me!</button>
 
             </div>
           </div>
           <div class="other-message">
             <div class="other">
-              <h2 class="messagehead">ADDRESS</h1>
-              <P class="scontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </P>
+              <h4 class="messagehead">ADDRESS</h4>
+              <P class="scontent">Gulshan- Sales Office- SA , Tower(Level5), Plot#1, Road#134,Block SE(A) Gulshan#1,Dahaka 1212. </P>
             </div>
             <div class="other1">
-              <h2 class="messagehead">PHONE</h1>
+              <h4 class="messagehead">PHONE</h4>
               <P class="scontent">+880 174 8548 5648 <br>+880 165 8564 5964</P>
             </div>
             <div class="other">
-              <h2 class="messagehead">WEB</h1>
-              <P class="scontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </P>
+              <h4 class="messagehead">WEB</h4>
+              <P class="scontent">Mail:quicksayed@gmail.com. <br>Website:dribble.com/alisayed.</P>
             </div>
           </div>
 
